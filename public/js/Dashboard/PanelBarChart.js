@@ -16,7 +16,7 @@ class BarChart extends DashboardPanelChart {
         var colors = this.generateColors(this.modelData.getLabels(this.propertyToUse).length);
 
         new Chart(ctx, {
-            type: 'bar',
+            type: 'horizontalBar',
             data: {
                 labels: this.modelData.getLabels(this.propertyToUse),
                 datasets: [{
@@ -33,6 +33,10 @@ class BarChart extends DashboardPanelChart {
                             beginAtZero: true
                         }
                     }]
+                },
+                title: {
+                    display: true,
+                    text: '4D Task ID'
                 },
                 legend: {
                     display: false

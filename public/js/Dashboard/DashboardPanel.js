@@ -19,7 +19,7 @@ class DashboardPanelChart extends DashboardPanel {
         divId = this.propertyToUse.replace(/[^A-Za-z0-9]/gi, '') + divId; // div name = property + chart type
         super.load(parentDivId, divId, viewer);
         this.canvasId = divId + 'Canvas';
-        $('#' + divId).append('<canvas id="' + this.canvasId + '" width="400" height="400"></canvas>');
+        $('#' + divId).append('<canvas id="' + this.canvasId + '" width="400" height="800"></canvas>');
         this.modelData = modelData;
         return true;
     }
@@ -102,6 +102,9 @@ class ModelData {
         return Object.keys(this._modelData[propertyName]).map(key => this._modelData[propertyName][key].length);
     }
 
+    getIdValue(propertyName) {
+        return Object.keys(this._modelData[propertyName]).map(key => this.getLabels(propertyName));
+    }
     getIds(propertyName, propertyValue) {
         return this._modelData[propertyName][propertyValue];
     }

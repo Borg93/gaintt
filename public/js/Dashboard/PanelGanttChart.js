@@ -13,17 +13,16 @@ class GanttChart extends DashboardGanttChart {
         var _this = this; // need this for the onClick event
 
         this.chart = new Gantt('#gantt', _this.tasks, {
-            header_height: 30,
+            header_height: 40,
             column_width: 30,
             step: 24,
             view_modes: ['Quarter Day', 'Half Day', 'Day', 'Week', 'Month'],
-            bar_height: 20,
-            bar_corner_radius: 3,
+            bar_height: 15,
+            bar_corner_radius: 7,
             arrow_curve: 5,
-            padding: 18,
+            padding: 10,
             view_mode: 'Month',   
             date_format: 'YYYY-MM-DD',
-            custom_popup_html: null,
             on_click: function (task) {
                 console.log(task);
                 console.log(_this.viewer);
